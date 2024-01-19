@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 100px;
+            background-color: #fce5d6; /* Set background color */
+            background-image: url('pie.png'); /* Set background image */
+            background-repeat: no-repeat;/* Prevent the image from repeating */
+            background-size: cover;
+        }
+
+        #question {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #284B63; /* Set text color */
+            cursor: pointer; /* Add cursor pointer for indicating it's clickable */
+        }
+
+        #buttons-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .button {
+            font-size: 26px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            background-color: #C2D9E3;
+            color: white;
+            border-color: #C2D9E3;
+            box-shadow: none;
+            color: #9B6A6C;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="question" onclick="customizeText()">click to edit</div>
+
+    <div id="buttons-container">
+        <button class="button" onclick="redirectToYes()">Yes</button>
+        <button class="button" onclick="moveNoButton()">No</button>
+    </div>
+
+    <script>
+        function redirectToYes() {
+            window.location.href = "yes.html";
+        }
+
+        function moveNoButton() {
+            const noButton = document.querySelector('.button:nth-child(2)');
+            const randomX = Math.floor(Math.random() * 500) - 200; // Increase the range to -200 to 200
+            const randomY = Math.floor(Math.random() * 500) - 200; // Increase the range to -200 to 200
+
+            noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        }
+
+        function customizeText() {
+            const newText = prompt("Enter the new text:");
+            if (newText !== null) {
+                document.getElementById('question').textContent = newText;
+            }
+        }
+    </script>
+
+</body>
+</html>

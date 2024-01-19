@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💋</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            overflow: hidden;
+            background-color: #fce5d6; /* Set background color */
+            background-image: url('pie.png'); /* Set background image */
+            background-repeat: no-repeat;/* Prevent the image from repeating */
+            background-size: cover;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fef2eb;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+
+        #confirmation {
+            font-size: 30px;
+            margin-top: 20px;
+            color: #96616B; /* Set text color */
+        }
+
+        #image-container {
+            margin-top: 20px;
+        }
+
+        #image-container img {
+            width: 150px; /* Adjust the width as needed */
+        }
+
+        #confetti-container {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .confetti, .kiss-confetti {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            animation: confettiAnimation 1s linear forwards;
+        }
+
+        @keyframes confettiAnimation {
+            0% {
+                transform: translateY(100vh);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .image-confetti {
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            animation: confettiAnimation 1s linear forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="popup">
+        <div id="confirmation">awww u luv me <br> i luv u too</div>
+        <div id="image-container">
+            <img src="amo.png" alt="Amo Image">
+        </div>
+    </div>
+
+    <div id="confetti-container">
+        <!-- Script to dynamically generate confetti emojis -->
+        <script>
+            const confettiContainer = document.getElementById('confetti-container');
+
+            for (let i = 0; i < 300; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.innerHTML = '🎀';
+
+                const randomX = Math.random() * 200; // Random X position
+                const randomY = Math.random() * 200; // Random Y position
+
+                confetti.style.top = `${randomY}vh`;
+                confetti.style.left = `${randomX}vw`;
+
+                confettiContainer.appendChild(confetti);
+            }
+        </script>
+
+        <!-- Script to dynamically generate 💋 emoji confetti -->
+        <script>
+            const kissConfettiContainer = document.getElementById('confetti-container');
+
+            for (let i = 0; i < 50; i++) {
+                const kissConfetti = document.createElement('div');
+                kissConfetti.className = 'kiss-confetti';
+                kissConfetti.innerHTML = '💋';
+
+                const randomX = Math.random() * 200; // Random X position
+                const randomY = Math.random() * 200; // Random Y position
+
+                kissConfetti.style.top = `${randomY}vh`;
+                kissConfetti.style.left = `${randomX}vw`;
+
+                kissConfettiContainer.appendChild(kissConfetti);
+            }
+        </script>
+
+        <!-- Script to dynamically generate image confetti -->
+        <script>
+            const imageConfettiContainer = document.getElementById('confetti-container');
+
+            for (let i = 0; i < 50; i++) {
+                const imageConfetti = document.createElement('div');
+                imageConfetti.className = 'image-confetti';
+                imageConfetti.style.backgroundImage = "url('kewpie.png')";
+
+                const randomX = Math.random() * 100; // Random X position
+                const randomY = Math.random() * 100; // Random Y position
+
+                imageConfetti.style.top = `${randomY}vh`;
+                imageConfetti.style.left = `${randomX}vw`;
+
+                confettiContainer.appendChild(imageConfetti);
+            }
+        </script>
+
+        <!-- Script to show the popup after a delay -->
+        <script>
+            setTimeout(() => {
+                document.getElementById('popup').style.display = 'block';
+            }, 2000); // 2000 milliseconds (2 seconds) delay
+        </script>
+    </div>
+
+</body>
+</html>
